@@ -9,6 +9,10 @@ app.use(express.static('public'));
 
 //senfile para enviar archivo
 
+app.get('/', (req,res) => {
+    res.sendFile(`${__dirname}/public/index.html`);
+});
+
 app.get('/contacta',(req,res) =>{
     res.sendFile(`${__dirname}/public/contacta.html`);
 });
@@ -21,4 +25,5 @@ app.get('/*splat',(req,res) =>{
     res.sendFile(`${__dirname}/public/404.html`);
 });
 
-app.listen(8080,()=>{console.log('http://localhost:8080')});
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => { console.log(`htt´://localhost:${PORT}`) });
