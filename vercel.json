@@ -4,6 +4,11 @@
     { "src": "app.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "app.js" }
+    { "src": "/contacta", "dest": "/app.js" },
+    { "src": "/localizacion", "dest": "/app.js" },
+    { "src": "/estilos/(.*)", "dest": "/public/estilos/$1" },
+    { "src": "/(.*\\.html)", "dest": "/public/$1" },
+    { "src": "/", "dest": "/app.js" },
+    { "src": "/(.*)", "dest": "/app.js" }
   ]
 }
